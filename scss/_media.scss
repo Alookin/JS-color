@@ -1,7 +1,21 @@
-@media screen and (min-width: 767px) {
+@media screen and (max-width: 850px) {
     .main-header {
         .menu-icon {
             display: block;
+
+            &__line {
+                animation: closedMid 0.8s backwards;
+                animation-direction: reverse;
+
+                &::before {
+                    animation: closedTop 0.8s backwards;
+                    animation-direction: reverse;
+                }
+                &::after {
+                    animation: closedBtm 0.8s backwards;
+                    animation-direction: reverse;
+                }
+            }
         }
 
         .nav-links {
@@ -69,14 +83,21 @@
             animation: pulse 1s;
             .menu-icon__line {
                 background: #fff;
+                animation: openMid .8s forwards;
 
                 &::before {
                     background: #fff;
+                    animation: openTop .8s forwards;
                 }
                 &::after {
                     background: #fff;
+                    animation: openBtm .8s forwards;
                 }
             }
         }
+    }
+
+    .hero h1 {
+        font-size: 2rem;
     }
 }
